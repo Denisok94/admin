@@ -1,0 +1,26 @@
+{
+    "name": "denisok94/admin",
+    "type": "yii2-extension",
+    "description": "Yii2 extension.",
+    "keywords": ["yii2", "yii2-admin-bar", "yii2-admin"],
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/Denisok94/admin/issues",
+        "source": "https://github.com/Denisok94/"
+    },
+    "authors": [{
+        "name": "Denisok94",
+        "email": "denisok94@inbox.ru"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "denisok94\\admin\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "v0.1"
+        }
+    }
+}
