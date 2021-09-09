@@ -2,7 +2,7 @@
     "name": "denisok94/admin",
     "type": "yii2-extension",
     "description": " ",
-    "keywords": [""],
+    "keywords": ["admin"],
     "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/Denisok94/admin/issues",
