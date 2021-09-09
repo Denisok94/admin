@@ -8,6 +8,7 @@
         "issues": "https://github.com/Denisok94/admin/issues",
         "source": "https://github.com/Denisok94/"
     },
+    "version": "0.1.2",
     "authors": [{
         "name": "Denisok94",
         "email": "denisok94@inbox.ru"
@@ -20,6 +21,5 @@
         "psr-4": {
             "denisok94\\admin\\": ""
         }
-    },
-    "version": "0.1.2"
+    }
 }
