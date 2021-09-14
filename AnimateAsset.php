@@ -22,5 +22,13 @@ class AnimateAsset extends AssetBundle
     public $css = [
         'animate.css',
     ];
+    /**
+     * @inheritdoc
+     */
+    public $js = [
+        'app.js',
+        'helper.js',
+        'jquery-ui.js',
+    ];
 
 }
