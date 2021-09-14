@@ -3,16 +3,13 @@
 namespace denisok94\admin\controllers;
 
 use Yii;
-
+use yii\web\Controller;
 use denisok94\admin\models\AuthItem;
 use denisok94\admin\models\User;
 /**
  * DefaultController
- *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
  */
-class DefaultController extends \yii\web\Controller
+class DefaultController extends Controller
 {
 
     /**

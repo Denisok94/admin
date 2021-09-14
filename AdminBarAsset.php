@@ -4,13 +4,7 @@ namespace denisok94\admin;
 
 use yii\web\AssetBundle;
 
-/**
- * AutocompleteAsset
- *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
- */
-class AutocompleteAsset extends AssetBundle
+class AdminBarAsset extends AssetBundle
 {
     /**
      * @inheritdoc
@@ -20,13 +14,13 @@ class AutocompleteAsset extends AssetBundle
      * @inheritdoc
      */
     public $css = [
-        'jquery-ui.css',
     ];
     /**
      * @inheritdoc
      */
     public $js = [
-        'jquery-ui.js',
+        'app.js',
+        'helper.js',
     ];
     /**
      * @inheritdoc

@@ -19,6 +19,7 @@ if (isset($_COOKIE['sidebar'])) {
 
 app\assets\AppAsset::register($this);
 dmstr\web\AdminLteAsset::register($this);
+denisok94\admin\AdminBarAsset::register($this);
 
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
 ?>
