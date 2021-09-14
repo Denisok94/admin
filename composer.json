@@ -15,7 +15,8 @@
     }],
     "require": {
         "yiisoft/yii2-authclient": "^2.2",
-        "denisok94/helper": "^0.5"
+        "denisok94/helper": "^0.5",
+        "dmstr/yii2-adminlte-asset": "2.6.2"
     },
     "autoload": {
         "psr-4": {
