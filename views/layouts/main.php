@@ -1,58 +1,63 @@
 <?php
 
-use yii\bootstrap\NavBar;
-use yii\bootstrap\Nav;
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-list(,$url) = Yii::$app->assetManager->publish('@denisok94/admin/assets');
-$this->registerCssFile($url.'/main.css');
+//проверка кук
+if (isset($_COOKIE['skin'])) {
+    $skin  = $_COOKIE['skin'];
+} else {
+    $skin = "blue";
+};
+if (isset($_COOKIE['sidebar'])) {
+    $coll  = $_COOKIE['sidebar'];
+} else {
+    $coll = "false";
+};
+
+app\assets\AppAsset::register($this);
+dmstr\web\AdminLteAsset::register($this);
+
+$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?= Html::csrfMetaTags() ?>
-        <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ?>
-    </head>
-    <body>
-        <?php $this->beginBody() ?>
-        <?php
-        NavBar::begin([
-            'brandLabel' => false,
-            'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
-        ]);
 
-        if (!empty($this->params['top-menu']) && isset($this->params['nav-items'])) {
-            echo Nav::widget([
-                'options' => ['class' => 'nav navbar-nav'],
-                'items' => $this->params['nav-items'],
-            ]);
-        }
+<head>
+    <meta charset="<?= Yii::$app->charset ?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
+</head>
 
-        echo Nav::widget([
-            'options' => ['class' => 'nav navbar-nav navbar-right'],
-            'items' => $this->context->module->navbar,
-         ]);
-        NavBar::end();
+<body class="hold-transition skin-<?php echo $skin; ?> sidebar-mini <?php if ($coll != "false") echo "sidebar-collapse"; ?>">
+    <?php $this->beginBody() ?>
+
+    <div class="wrapper">
+
+        <?= $this->render(
+            'header.php',
+            ['directoryAsset' => $directoryAsset]
+        ) ?>
+
+        <?= $this->render(
+            'left.php',
+            ['directoryAsset' => $directoryAsset]
+        )
         ?>
 
-        <div class="container">
-            <?= $content ?>
-        </div>
+        <?= $this->render(
+            'content.php',
+            ['content' => $content, 'directoryAsset' => $directoryAsset]
+        ) ?>
+    </div>
 
-        <footer class="footer">
-            <div class="container">
-                <p class="pull-right"><?= Yii::powered() ?></p>
-            </div>
-        </footer>
+    <?php $this->endBody() ?>
+</body>
 
-        <?php $this->endBody() ?>
-    </body>
 </html>
 <?php $this->endPage() ?>
