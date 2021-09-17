@@ -22,7 +22,7 @@ if ($page == 'README.md') {
         $url = Url::to($menu['url'], true);
         $links[] = "[**{$menu['label']}**]({$url})";
     }
-    $body = str_replace(':smile:.', ".\n\n" . implode('  ', $links) . "\n", file_get_contents(Url::to('@denisok94/admin/README.md')));
+    $body = str_replace(':smile:.', ".\n\n" . implode('  ', $links) . "\n", file_get_contents(Url::to('@denisok94/admin/README_test.md')));
 } else {
     $body = file_get_contents(Url::to("@denisok94/admin/{$page}"));
 }
