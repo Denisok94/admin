@@ -1,14 +1,14 @@
 {
     "name": "denisok94/admin",
     "type": "yii2-extension",
-    "description": " ",
+    "description": "---",
     "keywords": ["admin"],
     "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/Denisok94/admin/issues",
         "source": "https://github.com/Denisok94/"
     },
-    "version": "v0.1.6-alpha",
+    "version": "0.1.7",
     "authors": [{
         "name": "Denisok94",
         "email": "denisok94@inbox.ru"
@@ -21,6 +21,11 @@
     "autoload": {
         "psr-4": {
             "denisok94\\admin\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "v0.1"
         }
     }
 }
